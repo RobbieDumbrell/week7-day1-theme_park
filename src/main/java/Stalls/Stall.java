@@ -1,17 +1,19 @@
 package Stalls;
 
 import Interfaces.IReviewed;
+import Interfaces.ITicketed;
 import Visitors.Visitor;
 
 import java.util.ArrayList;
 
-public abstract class Stall implements IReviewed {
+public abstract class Stall implements IReviewed, ITicketed {
 
     protected String name;
     protected String ownerName;
     protected int parkingSpot;
     protected ArrayList<Visitor> visitors;
     protected int rating;
+    protected double defaultPrice;
 
 
     public Stall(String name, String ownerName, int parkingSpot){
@@ -19,6 +21,7 @@ public abstract class Stall implements IReviewed {
         this.ownerName = ownerName;
         this.parkingSpot = parkingSpot;
         this.visitors = new ArrayList<>();
+
     }
 
     @Override
@@ -48,5 +51,15 @@ public abstract class Stall implements IReviewed {
 
     public void removeVisitor(Visitor visitor){
         visitors.remove(visitor);
+    }
+
+    @Override
+    public double defaultPrice(){
+        return this.defaultPrice;
+    }
+
+    @Override
+    public double priceFor(Visitor visitor){
+        return this.defaultPrice;
     }
 }

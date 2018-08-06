@@ -7,6 +7,7 @@ public class TobaccoStall extends Stall implements ISecurity {
 
     public TobaccoStall(String name, String ownerName, int parkingSpot){
         super(name, ownerName, parkingSpot);
+        this.defaultPrice = 6.60;
     }
 
     @Override

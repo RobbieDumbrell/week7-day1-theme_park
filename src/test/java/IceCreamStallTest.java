@@ -26,4 +26,9 @@ public class IceCreamStallTest {
     public void hasParkingSpot(){
         assertEquals(89, iceCreamStall.getParkingSpot());
     }
+
+    @Test
+    public void haDefaultPrice(){
+        assertEquals(2.80, iceCreamStall.defaultPrice(), 0);
+    }
 }

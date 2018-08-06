@@ -44,4 +44,10 @@ public class TobaccoStallTest {
         tobaccoStall.addVisitor(visitor2);
         assertEquals(0, tobaccoStall.getVisitorsCount());
     }
+
+    @Test
+    public void haDefaultPrice(){
+        assertEquals(6.60, tobaccoStall.defaultPrice(), 0);
+    }
+
 }
